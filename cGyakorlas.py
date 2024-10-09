@@ -1,3 +1,6 @@
+import math
+
+
 def harom():
     # 1. megoldás
     for i in range(0,21,1):
@@ -26,6 +29,9 @@ def ot():
 
 def beolvas():
     szam = int(input("Kérem adjon meg egy egész számot!"))
+    return szam
+def beolvas2():
+    szam = float(input("Kérem adjon meg egy egész számot!"))
     return szam
 
 def hat():
@@ -57,5 +63,68 @@ def het():
     else:
         for i in range(0, szorzat+1,1):
             print(i, end=" ")
+
+def nyolc():
+    # 8.	Kérj be 2 számot, majd írasd ki a számokat 0-tól a 2 szám szorzatáig!
+    szam1 = beolvas()
+    szam2 = beolvas()
+    szorzat = szam1 * szam2
+
+    if szorzat < 0:
+        i = 0
+        while i < szorzat-1:
+            print(i, end=" ")
+            i -= 1 # i = i-1
+        # for i in range(0, szorzat - 1, -1):
+            # print(i, end=" ")
+    else:
+         i = 0
+         while i < szorzat + 1:
+             print(i, end=" ")
+             i += 1
+        # for i in range(0, szorzat + 1, 1):
+            # print(i, end=" ")
+
 def kilenc():
-    pass
+    # 9.	Írasd ki az első 7 pozitív egész számot vesszővel elválasztva!
+
+    for szam in range(0,8,1):
+        # print(szam, end=",")
+        print(str(szam)+",", end="")
+def kilencA():
+    # 1. megoldás
+    for szam in range(0,7,1):
+        print(str(szam)+",", end="")
+    print(7)
+
+    #2, megoldás
+    """
+    print(0, end="")
+    for szam in range(1,8,1):
+        print(","+str(szam), end="")
+    """
+
+def tizenegy():
+    # 11.	Írasd ki 2 bekért szám (x és y) alapján, hogy mennyi 3x+y2!
+    x = beolvas2()
+    y = beolvas2()
+
+    eredmeny = 3*x+y**2
+    eredmeny1 = 3 * x + math.pow(y,2)
+    eredmeny2 = 3 * x + pow(y,2)
+    eredmeny3 = 3 * x + (y*y)
+    print("3*"+str(x)+"+"+str(y)+"^2="+str(eredmeny))
+def tizenketto():
+    # 12.	Számold meg 2 bekért szám közötti páros számokat! (pl. hány db páros szám van 4 és 31 között?)
+    x = beolvas2()
+    y = beolvas2()
+    # print(math.floor(x))
+    # print(math.ceil(y))
+    db = 0
+    for szam in range(math.ceil(x), round(y)+1,1):
+        #print(szam, end=" ")
+        if szam%2 == 0:
+            #páros
+            db += 1
+    print("A páros számok száma: "+str(db)+"db.")
+
